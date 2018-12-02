@@ -30,13 +30,13 @@ class Adapter {
   }
 
   //Delete products
-  deleteProduct(id, body) {
-    return this.delete(`${this.baseUrl}/products/${id}`, body);
+  deleteProduct(id) {
+    return this.delete(`${this.baseUrl}/products/${id}`);
   }
 
-  delete(url, body) {
+  delete(url) {
     return fetch(url, {
-      method:'DELETE'
+      method:'DELETE',
     })
   }
 

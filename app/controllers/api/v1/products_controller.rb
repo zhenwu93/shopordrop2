@@ -1,5 +1,5 @@
 class Api::V1::ProductsController < ApplicationController
-  before_action :find_product, only: [:show, :update]
+  before_action :find_product, only: [:show, :update, :destroy]
 
   def index
     @products = Product.all
@@ -23,6 +23,10 @@ class Api::V1::ProductsController < ApplicationController
     else
       render json: {errors: @product.errors.full_messages }
     end
+  end
+
+  def destroy
+    @product.destroy
   end
 
   private
